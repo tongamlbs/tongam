@@ -1,0 +1,61 @@
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+    <style type="text/css">
+    body {
+    background-color: rgb(148, 106, 148);
+    }
+    h1 {
+    text-align:center;
+    }
+    </style>
+    
+        <div class="calculator-container">
+            <h1><u>BMI CALCULATOR</u></h1>
+           
+            <p>Tinggi Badan (Cm):</p>
+            <input class="height-input-field" type="text">
+            <p>Berat Badan(kg):</p>
+            <input class="weight-input-field" type="text"><br>
+
+
+            <button class="calculate">Hitung</button>
+
+
+        </div>
+        <h3 class="result"></h3>
+        <p class="result-statement"></p>
+        <script type="text/javascript">
+        var heightInput = document.querySelector(".height-input-field");
+        var weightInput = document.querySelector(".weight-input-field");
+        var calculateButton = document.querySelector(".calculate");
+        var result = document.querySelector(".result");
+        var statement = document.querySelector(".result-statement");
+        var BMI, height, weight, Nangka, Hhuruf;
+        
+        calculateButton.addEventListener("click", ()=>{
+        
+        height = heightInput.value;
+        weight = weightInput.value;
+        BMI = weight/(height**2); 
+        result.innerText = BMI;
+        
+        if(BMI < 18.5){
+        statement.innerText = "Berat Badan Sangat Kurang";    
+        }else if((BMI > 18.5) && (BMI < 24.9)){
+        statement.innerText = "Berat Badan Normal";
+        }else if((BMI > 25) && (BMI < 29.9 )){
+        statement.innerText = "Kelebihan Berat Badan ";
+        }else{
+        statement.innerText = "Obesitas";
+        }
+        });
+        </script>
+    </body>
+    </html>
