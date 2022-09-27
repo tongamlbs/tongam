@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Latihan minggu 01</title>
+</head>
+<body >
+<style type="text/css">
+body{
+background-color: wheat;
+}
+h1{
+color: black;
+}
+td{
+color:black;
+}
+input{
+color:blue;
+}
+</style>
+<h1><u>Hitung Nilai</u></h1>
+ 
+
+<form name="form" action="javascript:void(0);">
+	<table>
+		<tr>
+			<td>Nilai Tugas (40%)</td>
+			<td><input type="text" name="ntgs"></td>
+		</tr>
+		<tr>
+			<td>Nilai UTS (30%)</td>
+			<td><input type="text" name="nuts"></td>
+		</tr>
+		<tr>
+			<td>Nilai UAS (30%)</td>
+			<td><input type="text" name="nuas"></td>
+		</tr>
+		<tr>
+			<td>Nilai Akhir</td>
+			<td><input type="text" name="nakhir" disabled></td>
+		</tr>
+		<tr>
+			<td>Nilai Huruf</td>
+			<td><input type="text" name="nhuruf" disabled></td>
+		</tr>
+		<tr>
+			<td ><input  type="submit" name="hasil" value="Hitung" onclick="nilaiakhir()"></td>
+		</tr>
+	</table>
+</form>
+
+<script type="text/javascript">
+
+/** kode fungsi nilai akhir */
+function nilaiakhir(){
+	var ntgs = parseInt(document.form.ntgs.value);
+	var nuts = parseInt(document.form.nuts.value);
+	var nuas = parseInt(document.form.nuas.value);
+	var nhuruf = "";
+	var nakhir = (parseInt(ntgs)*40/100) + (parseInt(nuts)*30/100) + (parseInt(nuas)*30/100);
+	document.form.nakhir.value = nakhir;
+
+	if( nakhir > 80){
+		nhuruf = "A"
+	}
+	else if( nakhir > 70 ){
+		nhuruf = "B";
+	}
+	else if( nakhir > 60 ){
+		nhuruf = "C";
+	}
+	else if( nakhir > 40 ){
+		nhuruf = "D";
+	} else {
+		nhuruf = "E";		
+	}
+
+	document.form.nhuruf.value = nhuruf;
+}
+
+
+</script>
+<br >
+</body>
+</html>
